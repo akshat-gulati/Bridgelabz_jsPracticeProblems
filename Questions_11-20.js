@@ -68,11 +68,50 @@ function sumOfDigits(num) {
     }
     return sum;
 }
-console.log(sumOfDigits(12));
+// console.log(sumOfDigits(12));
 
 // 18. Print the first 100 prime numbers
 
+function isPrime(num) {
+    if (num <= 1) return false;
+    if (num <= 3) return true;
+    if (num % 2 === 0 || num % 3 === 0) return false;
+    for (let i = 5; i * i <= num; i += 6) {
+        if (num % i === 0 || num % (i + 2) === 0) return false;
+    }
+    return true;
+}
 
-// 19. Create a function that will return in an array the first âpâ prime numbers greater than ânâ
+function printFirstNPrimes(n) {
+    let count = 0;
+    let num = 2;
+    while (count < n) {
+        if (isPrime(num)) {
+            console.log(num);
+            count++;
+        }
+        num++;
+    }
+}
+
+// printFirstNPrimes(100);
+
+// 19. Create a function that will return in an array the first âpâ prime numbers greater than ânâ
+
+
 // 20. Rotate an array to the left 1 position
+arr = [1,2,3,4,5,6]
+k = arr.length
+
+function rotate(arr) {
+    
+    let first = arr[0]
+    for(let i =1; i<arr.length; i++){
+        arr[i-1] = arr[i]
+    }
+    arr[k-1] = first
+
+    return arr
+}
+console.log(rotate(arr));
 
