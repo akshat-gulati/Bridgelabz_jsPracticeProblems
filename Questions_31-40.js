@@ -1,8 +1,6 @@
 // 31. Create a function that will return the number of words in a text
 
 let str = "Best program of the decade goes to this one";
-
-
 function numberWords(str) {
     let count = 1;
     for (let i = 1; i < str.length; i++) {
