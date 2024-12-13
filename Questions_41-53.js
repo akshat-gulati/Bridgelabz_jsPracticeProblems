@@ -78,10 +78,32 @@ totalSum = sumJaggedArray(jaggedArray);
 
 // 46. Find the maximum number in a jagged array of numbers or array of numbers
 
+function findMaxInJaggedArray(jaggedArray) {
+    let max = -Infinity;
+    for (let i = 0; i < jaggedArray.length; i++) {
+        for (let j = 0; j < jaggedArray[i].length; j++) {
+            if (jaggedArray[i][j] > max) {
+                max = jaggedArray[i][j];
+            }
+        }
+    }
+    return max;
+}
+
+jaggedArray = [[3, 5, 9], [1, 6], [8, 7, 4]];
+console.log(findMaxInJaggedArray(jaggedArray));
 
 
 // 47. Deep copy a jagged array with numbers or other arrays in a new array
 
+function deepCopyJaggedArray(jaggedArray) {
+    newArray = [...jaggedArray]
+
+    return newArray
+}
+
+arr = [[3, 5, 9], [1, 6], [8, 7, 4]];
+console.log(deepCopyJaggedArray(arr));
 
 // 48. Create a function to return the longest word in a string
 
@@ -93,7 +115,7 @@ function longestWord(str) {
 }
 
 const str = "Best program of the decade";
-console.log(longestWord(str)); 
+// console.log(longestWord(str)); 
 
 // 49. Shuffle an array of strings
 
@@ -107,7 +129,7 @@ function shuffleArray(array) {
 
 const strings = ["apple", "banana", "cherry", "date", "elderberry"];
 const shuffledStrings = shuffleArray(strings);
-console.log(shuffledStrings); 
+// console.log(shuffledStrings); 
 
 // 50. Create a function that will receive n as argument and return an array of n random numbers from 1 to n. The numbers should be unique inside the array.
 
@@ -123,9 +145,33 @@ function generateUniqueRandomNumbers(n) {
 
 n = 10;
 randomNumbers = generateUniqueRandomNumbers(n);
-console.log(randomNumbers); 
+// console.log(randomNumbers); 
 
 // 51. Find the frequency of letters inside a string. Return the result as an array of arrays. Each subarray has 2 elements: letter and number of occurrences.
+
+function Frequency(str){
+    arr = []
+    const map = new Map()
+    const n = str.length
+
+    for(let i =0; i<n; i++){
+        if (map.has(str.charAt(i))) {
+            map.set(str.charAt(i), map.get(str.charAt(i))+1)
+        }
+        else{
+            map.set(str.charAt(i), 1)
+        }
+    }
+    
+    for(const[key, value] of map){
+        arr.push([key, value])
+    }
+    console.log(arr);
+    
+    
+}
+
+Frequency("Hello")
 
 
 // 52. Calculate Fibonacci(500) with high precision (all digits)
@@ -140,7 +186,7 @@ function fibonacci(n) {
 
 
 fib500 = fibonacci(500);
-console.log(fib500.toString()); 
+// console.log(fib500.toString()); 
 
 
 // 53. Calculate 70! with high precision (all digits)
@@ -154,4 +200,4 @@ function factorial(n) {
 }
 
 fact70 = factorial(70);
-console.log(fact70.toString()); 
+// console.log(fact70.toString()); 

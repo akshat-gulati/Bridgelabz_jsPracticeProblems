@@ -21,7 +21,18 @@ for(let i =1; i<=10; i++){
 
 // 4. Print all the multiplication tables with numbers from 1 to 10
 
+function table() {
+    for(let i = 1; i<=10; i++){
+    
+        console.log("Printing table for: " + i);
+    
+        for(let j = 1; j<=10; j++){
+            console.log(i + " x " + j + " = " + i*j);
+        }
+    }
+}
 
+// table()
 
 // 5. Calculate the sum of numbers from 1 to 10
 let sum = 0
@@ -81,7 +92,7 @@ for(let i = 1; i<=10; i++){
 // console.log(arr);
 
 sum = arr.reduce((accumulator, value) => accumulator + value, 0);
-console.log(sum);
+// console.log(sum);
 
 
 

@@ -11,7 +11,7 @@ function numberWords(str) {
     return count;
 }
 
-console.log(numberWords(str));
+// console.log(numberWords(str));
 
 // 32. Create a function that will capitalize the first letter of each word in a text
 
@@ -28,7 +28,7 @@ function frstCapital(str) {
 }
 
 str = "sam is a good boy";
-console.log(frstCapital(str));
+// console.log(frstCapital(str));
 
 
 // 33. Calculate the sum of numbers received in a comma delimited string
@@ -51,7 +51,7 @@ str = "1.5,2.3,4.7,3.1";
 str = "This is a best program"
 function strToArr(str) {
     arr = str.split(" ")
-    console.log(arr);
+    // console.log(arr);
 }
 
 // 35. Create a function to convert a CSV text to a “bi-dimensional” array
@@ -84,7 +84,7 @@ function strToArrChr(str) {
     return ans
 }
 str = "Hi Hello "
-console.log(strToArrChr(str));
+// console.log(strToArrChr(str));
 
 // 37. Create a function that will convert a string in an array containing the ASCII codes of each character
 
@@ -104,12 +104,21 @@ function asciiArrayToString(asciiArray) {
 
 asciiArray = [72, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100, 33];
 text = asciiArrayToString(asciiArray);
-console.log(text); 
+// console.log(text); 
 
 
 // 39. Implement the Caesar cypher
 
+function caesarCipher(str) {
+    let n = str.length;
+    let newStr = "";
+    for (let i = 0; i < n; i++) {
+        newStr += String.fromCharCode(str.charCodeAt(i) + 3);
+    }
+    console.log(newStr);
+}
 
+caesarCipher("Akshat")
 
 // 40. Implement the bubble sort algorithm for an array of numbers
 

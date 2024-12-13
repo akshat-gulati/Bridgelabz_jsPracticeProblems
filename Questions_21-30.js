@@ -138,6 +138,39 @@ sumFirstNPrimes(100)
 
 // 29. Print the distance between the first 100 prime numbers
 
+function isPrime(num) {
+    if (num <= 1) return false;
+    if (num <= 3) return true;
+    if (num % 2 === 0 || num % 3 === 0) return false;
+    for (let i = 5; i * i <= num; i += 6) {
+        if (num % i === 0 || num % (i + 2) === 0) return false;
+    }
+    return true;
+}
+
+function firstNPrimes(n) {
+    primes = [];
+    let num = 2;
+    while (primes.length < n) {
+        if (isPrime(num)) {
+            primes.push(num);
+        }
+        num++;
+    }
+    return primes;
+}
+
+function printPrimeDistances(n) {
+    primes = firstNPrimes(n);
+    for (let i = 1; i < primes.length; i++) {
+        const distance = primes[i] - primes[i - 1];
+        console.log(`Distance between ${primes[i - 1]} and ${primes[i]}: ${distance}`);
+    }
+}
+
+printPrimeDistances(100);
+
+
 // 30. Create a function that will add two positive numbers of indefinite size. The numbers are received as strings and the result should be also provided as string.
 
 

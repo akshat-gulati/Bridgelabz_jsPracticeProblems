@@ -37,8 +37,7 @@ function fibonacci(n) {
     return fibonacci(n - 1) + fibonacci(n - 2);
 }
 
-// Example usage:
-const n = 10;
+n = 10;
 // console.log(`The ${n}th Fibonacci number is ${fibonacci(n)}`);
 
 
@@ -96,8 +95,33 @@ function printFirstNPrimes(n) {
 
 // printFirstNPrimes(100);
 
-// 19. Create a function that will return in an array the first âpâ prime numbers greater than ânâ
+// 19. Create a function that will return in an array the first “p” prime numbers greater than “n”
 
+function isPrime(num) {
+    if (num <= 1) return false;
+    if (num <= 3) return true;
+    if (num % 2 === 0 || num % 3 === 0) return false;
+    for (let i = 5; i * i <= num; i += 6) {
+        if (num % i === 0 || num % (i + 2) === 0) return false;
+    }
+    return true;
+}
+
+function firstPrimesGreaterThanN(n, p) {
+    primes = [];
+    let num = n + 1;
+    while (primes.length < p) {
+        if (isPrime(num)) {
+            primes.push(num);
+        }
+        num++;
+    }
+    return primes;
+}
+
+n = 10, p = 5
+primes = firstPrimesGreaterThanN(n, p);
+console.log(primes); 
 
 // 20. Rotate an array to the left 1 position
 arr = [1,2,3,4,5,6]
@@ -113,5 +137,5 @@ function rotate(arr) {
 
     return arr
 }
-console.log(rotate(arr));
+// console.log(rotate(arr));
 
